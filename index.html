@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Shoot For The Moon</title>
+	<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/email.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="honorable/awwwards.css">
+	<script src="js/jquery.min.js"></script>
+	<!-- <script src="js/app.js"></script> -->
+	<script src="js/eyesAnimation.js"></script>
+	<script src="js/main-portfolio.js"></script>
+	<script src="js/animations.js"></script>
+	<script type="text/javascript" src="js/modernizr.js"></script>
+	<script src="db/data.js"></script>
+</head>
+<body>
+	<div id="awwwards" class="honorable black left">
+		<a href="http://www.awwwards.com/best-websites/shoot-for-the-moon" target="_blank">Awwwards</a>
+	</div>
+
+	<div id="loadingScreen" class="hideLoaderOpacity">
+		<div class="loader">loading...</div>
+		<p id="loadingScreenInfo" class="hideLoaderOpacity">0%</p>
+	</div>
+
+	<div id="wrap">
+		<a href="javascript:toggleMenu();" id="menu" >
+			<i class="fa fa-comments"></i>
+		</a>
+		<div id="page-wrapper">
+			<div id="form-messages"></div>
+			<form id="ajax-contact" method="post" action="php/mailer.php">
+				<div class="filed">
+					<label for="name" class="placeholderBackup"></label>
+					<input type="text" id="name" name="name" placeholder="Name" required>
+				</div>
+				<div class="filed">
+					<label for="email" class="placeholderBackup"></label>
+					<input type="text" id="email" name="email" placeholder="Email" required>
+				</div>
+				<div class="filed">
+					<label for="message" class="placeholderBackup"></label>
+					<textarea type="text" id="message" name="message" placeholder="Message" required></textarea>
+				</div>
+				<div class="filed">
+					<button type="submit">Send</button>
+				</div>
+			</form>
+			
+			<div id="socialNetworks">
+				<p>Follow me</p>
+			</div>
+		</div>
+	
+		<div id="footer">
+			<div id="swissFlag"></div>
+			Made in Switzerland
+		</div>
+
+		<div id="backgroundSky" class="screenHeight"></div>
+		<div id="stars"></div>
+		<div id="clouds1" class="clouds"></div>
+		<div id="clouds2" class="clouds"></div>
+		<div id="clouds3" class="clouds"></div>
+		<div id="starAnimation1"></div>
+		<div id="starAnimation2"></div>
+		<div id="starAnimation3"></div>
+		<div id="starAnimation4"></div>
+		<div id="starAnimation5"></div>
+		<div id="starAnimation6"></div>
+		<div id="starAnimation7"></div>
+		<div id="starAnimation8"></div>
+		<div id="starAnimation9"></div>
+		<div id="starAnimation10"></div>
+
+		<a href="javascript:shotFired=true;animateToID('portfolio');" id="shootButtonForTablet"></a>
+
+		<div id="aldeia"></div>
+		<div id="mountainsBackground"></div>
+		<div id="moonFixedContainer">
+			<div class="centerAndMiddle">
+				<a href="javascript:animateToID('bluePrint');" id="startButton">start</a>
+				<div id="mainTitle">
+					<span >Marcelo Gil presents</span>
+					<span style="font-size:2em;">Shoot</span> <span style="font-size:1em;">for</span><br />
+					<span style="font-size:1em;margin-left:80px;">the</span> <span style="font-size:2em;">moon</span><br />
+				</div>
+				<div id="shootCoordinates">
+					<div style="padding:20px;">
+						<h2>Prepare <br />to shoot</h2>
+						<div id="wavingSpaceship" class="infiniteRotation infiniteRotationAnimation">
+							<div class="spaceshipFlameRotated"></div>
+						</div>
+						<p>X:<span id="xCoordInfo">0</span>  Y:<span id="yCoordInfo">0</span></p>
+					</div>
+				</div>
+				<div id="flyingSpaceship"> </div>
+			</div>
+		</div>
+		
+		<div id="moon">
+			<div id="moonImage"></div>
+			<div id="moonEyesBack"></div>
+			<div id="moonEyeLeft" class="moonEyes">
+				<div class="retina"></div>
+			</div>
+			<div id="moonEyeRight" class="moonEyes">
+				<div class="retina"></div>
+			</div>
+		</div>
+
+		<a href="javascript:;" id="mira">
+			<div id="miraFora" class="rotating"></div>
+			<div id="miraDentro"></div>
+		</a>
+		
+		<div id="openScreen" class="screenHeight x3">
+
+		</div>
+		<div id="bluePrint" class="screenHeight">
+			<div id="topBanner">Select one spaceship</div>
+			<div class="centerAndMiddle">
+				<img src="img/sprite_blueScreen.svg" width="100%" height="100%"/>
+			</div>
+			<div id="centerTheSpaceShips">
+				<a href="javascript:;" id="spaceShip_code" class="spaceShipChoice">
+					<div class="spaceshipFlame"></div>
+				</a>
+				<a href="javascript:;" id="spaceShip_mobile" class="spaceShipChoice" >
+					<div class="spaceshipFlame"></div>
+				</a>
+				<a href="javascript:;" id="spaceShip_print" class="spaceShipChoice" >
+					<div class="spaceshipFlame"></div>
+				</a>
+				<a href="javascript:;" id="spaceShip_video" class="spaceShipChoice">
+					<div class="spaceshipFlame"></div>
+				</a>
+				<a href="javascript:;" id="spaceShip_illustration" class="spaceShipChoice">
+					<div class="spaceshipFlame"></div>
+				</a>
+			</div>
+			<span id="spaceshipTypeSelected">All</span>
+			<span id="bluePrintFooter">&minus; Start the adventure &minus;</span>
+		</div>
+		<div id="shootScope" class="screenHeight x3"></div>
+	
+		<div id="passeio"></div>
+		<div id="portfolio">
+			<div id="typeOfWork">
+				<div style="margin:auto;padding:20px;width:940px;">
+					<a id="button_all" href="javascript:;" class="portfolioFilter selected">
+						<div class="spaceshipFlameRotated"></div>
+						<span class="button_title">All</span></a>
+					<a id="button_code" href="javascript:;" class="portfolioFilter">
+						<div class="spaceshipFlameRotated"></div>
+						<span class="button_title">Web</span></a>
+					<a id="button_mobile" href="javascript:;" class="portfolioFilter">
+						<div class="spaceshipFlameRotated"></div>
+						<span class="button_title">Mobile</span></a>
+					<a id="button_print" href="javascript:;" class="portfolioFilter">
+						<div class="spaceshipFlameRotated"></div>
+						<span class="button_title">Print</span></a>
+					<a id="button_video" href="javascript:;" class="portfolioFilter">
+						<div class="spaceshipFlameRotated"></div>
+						<span class="button_title">Video</span></a>
+					<a id="button_illustration" href="javascript:;" class="portfolioFilter">
+						<div class="spaceshipFlameRotated"></div>
+						<span class="button_title">Illustration</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="centerAndMiddle">
+				<div id="portfolio_thumbnails">
+					<!-- <div class="thumbnail"> 
+						<a href="javascript:;"> 
+							<img src="img/portfolio/thumb1.jpg" alt="laFourchete" /> 
+							<span class="dark-background"> Banner Creator App<em> 2013-02-01</em>
+							</span>
+						</a> 
+					</div>-->
+				</div>
+			</div>
+			<div id="portfolioOpened"></div>
+			
+			<div id="portfolioDisplayFixedContainer">
+				<div class="content"></div>
+			</div>
+		</div>
+		<div id="finalCredits">
+			<img src="" width="1" height="1" style="opacity:0;">
+			<a href="javascript:toggleMenu();" id="finalMoon"></a>
+			<h1>Share this adventure</h1>
+			<a href="https://plus.google.com/share?url=www.shootforthemoon.ch" class="socialShare googlePlus" title="Share on Google+" target="_blank"><i class="fa fa-google-plus"></i></a>
+			<a href="https://twitter.com/share?url=www.shootforthemoon.ch&via=marcelogil&text=%23ShootForTheMoon - Check out this portfolio website at www.shootforthemoon.ch" title="Share on Twitter" class="socialShare twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+			<a href="https://www.facebook.com/sharer/sharer.php?u=www.shootforthemoon.ch&t=%23ShootForTheMoon - Check out this portfolio website at www.shootforthemoon.ch" class="socialShare facebook" title="Share on Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+			<br /><br />
+			<p>Shoot for the Moon is a personal portfolio created by Marcelo Gil.<br />
+			It was inspired by the 1902 movie called <a href="http://www.imdb.com/title/tt0000417/" target="_blank">Le Voyage dans la Lune</a> directed by Georges M&eacute;li&egrave;s.</p>
+			<p>Drop me a line with your thoughts and suggestions <a href="javascript:toggleMenu();">here</a>.</p>
+			<br /><br />
+			<p style="font-size:10px;">Designed and coded by <a href="http://www.marcelogil.com/" target="_blank">Marcelo Gil</a> | ® 2016  </p>
+			<br />
+		</div>
+	</div>
+</body>
+</html>
